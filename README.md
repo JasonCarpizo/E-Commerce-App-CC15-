@@ -1,5 +1,4 @@
 # E-Commerce-App-CC15-
-## Final Project
 Features
 - User & Seller Interface
 - Add to Cart & Checkout
