@@ -13,3 +13,12 @@ Features
 
 >> add more to plan out
 
+#Database
+
+Item Categories
+-Electronics & Gadgets
+-Clothing & Fashion
+-Home & Living
+-Health & Beauty
+-Books & Stationery
+-Food & Snacks
