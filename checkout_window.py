@@ -1,49 +1,48 @@
-import sys
 from PyQt6 import QtWidgets
 from PyQt6.QtWidgets import QMessageBox
-from checkout import Ui_CheckoutWindow
+from database import checkout_items
 
-class CheckoutWindow(QtWidgets.QMainWindow, Ui_CheckoutWindow):
+class CheckoutWindow(QtWidgets.QMainWindow):
     def __init__(self, buyer_ID):
         super().__init__()
-        self.setupUi(self)  
-        self.backButton.clicked.connect(self.goBack)
-        self.removeButton.clicked.connect(self.remove)
-        self.CheckoutButton.clicked.connect(self.checkout)
+        from checkout import Ui_CheckoutWindow
+        self.ui = Ui_CheckoutWindow()
+        self.ui.setupUi(self)
+
+        self.buyer_ID = buyer_ID 
+
+        self.ui.backButton.clicked.connect(self.goBack)
+        self.ui.removeButton.clicked.connect(self.remove)
+        self.ui.CheckoutButton.clicked.connect(self.checkout)
 
     def remove(self):
-        selected_items = self.cartList.selectedItems()
+        selected_items = self.ui.cartList.selectedItems()
         if not selected_items:
             QMessageBox.warning(self, "No Selection", "Please select an item to remove.")
             return
 
         for item in selected_items:
-            self.cartList.takeItem(self.cartList.row(item))
-        
+            self.ui.cartList.takeItem(self.ui.cartList.row(item))
+
     def checkout(self):
-        name = self.name.text()
-        number = self.number.text()
-        address = self.address.text()
+        name = self.ui.name.text()
+        number = self.ui.number.text()
+        address = self.ui.address.text()
 
-        items = []
-        for index in range(self.cartList.count()):
-            item = self.cartList.item(index).text()
-            items.append(item)
+        if not name or not number or not address:
+            QMessageBox.warning(self, "Missing Fields", "Please fill in all fields.")
+            return
 
-        cart_contents = "\n".join(items) if items else "No items in cart."
+        success = checkout_items(self.buyer_ID)
 
-        message = (
-            f"Name: {name}\n"
-            f"Contact Number: {number}\n"
-            f"Address: {address}\n\n"
-            f"Items:\n{cart_contents}"
-        )
+        if success:
+            QMessageBox.information(self, "Checkout Complete", "Your order has been placed.")
+            self.ui.cartList.clear()
+        else:
+            QMessageBox.critical(self, "Checkout Failed", "Unable to complete checkout. Please try again.")
 
-        QMessageBox.information(self, "Checkout Details", message)
-        
     def goBack(self):
         from buyer_window import BuyerApp
-        self.buyer_window = BuyerApp(self.buyer_ID)  
+        self.buyer_window = BuyerApp(self.buyer_ID)
         self.buyer_window.show()
-
-
+        self.close()
