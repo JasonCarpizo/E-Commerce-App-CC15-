@@ -58,12 +58,6 @@ class BuyerApp(QtWidgets.QMainWindow):
 
     
     def addCart(self):
-        from checkout import Ui_CheckoutWindow
-        self.checkout_window = Ui_CheckoutWindow()  
+        from checkout_window import CheckoutWindow
+        self.checkout_window = CheckoutWindow(self.buyer_ID)  
         self.checkout_window.show()
-
-if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    window = BuyerApp(buyerID=None)
-    window.show()
-    sys.exit(app.exec())
