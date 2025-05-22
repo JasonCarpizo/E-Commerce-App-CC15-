@@ -1,0 +1,32 @@
+<RCC>
+  <qresource>
+    <file>png/001-heart.png</file>
+    <file>png/002-search-interface-symbol.png</file>
+    <file>png/003-shopping-cart.png</file>
+    <file>png/004-shopping-cart-1.png</file>
+    <file>png/005-online-shopping.png</file>
+    <file>png/006-bell.png</file>
+    <file>png/007-notification.png</file>
+    <file>png/008-user.png</file>
+    <file>png/009-user-1.png</file>
+    <file>png/BooksStationery_icon.png</file>
+    <file>png/BooksStationery_icon_notSelected.png</file>
+    <file>png/categories.png</file>
+    <file>png/categories_logo_notSelected.png</file>
+    <file>png/categories_logo_Selected.png</file>
+    <file>png/ClothingFashion_icon.png</file>
+    <file>png/ClothingFashion_icon_notSelected.png</file>
+    <file>png/ElectronicsGadgets_icon.png</file>
+    <file>png/ElectronicsGadgets_icon_notSelected.png</file>
+    <file>png/FoodSnacks_icon.png</file>
+    <file>png/FoodSnacks_icon_notSelected.png</file>
+    <file>png/HealthBeauty_icon.png</file>
+    <file>png/HealthBeauty_icon_notSelected.png</file>
+    <file>png/HomeLiving_icon.png</file>
+    <file>png/HomeLiving_icon_notSelected.png</file>
+    <file>png/NGYOPIFY.png</file>
+    <file>png/other_icon_notSelected.png</file>
+    <file>png/settings_logo_notSelected.png</file>
+    <file>png/settings_logo_Selected.png</file>
+  </qresource>
+</RCC>
