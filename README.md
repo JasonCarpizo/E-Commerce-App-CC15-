@@ -15,10 +15,11 @@ Features
 
 #Database
 
-Item Categories
--Electronics & Gadgets
--Clothing & Fashion
--Home & Living
--Health & Beauty
--Books & Stationery
--Food & Snacks
+## Item Categories
+Books & Stationery
+Clothing & Fashion
+Electronics & Gadgets
+Food & Snacks
+Health & Beauty
+Home & Living
+Others
