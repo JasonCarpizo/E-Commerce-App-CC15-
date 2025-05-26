@@ -17,9 +17,9 @@ Features
 
 ## Item Categories
 Books & Stationery
-Clothing & Fashion
-Electronics & Gadgets
-Food & Snacks
-Health & Beauty
-Home & Living
+Clothing and Fashion
+Electronics and Gadgets
+Food and Snacks
+Health and Beauty
+Home and Living
 Others
